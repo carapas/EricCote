@@ -3306,6 +3306,12 @@ div.pp_default .pp_close:hover
 	width: 100%;
 	height: 450px;
 }
+
+.footer-contact-map
+{
+	width: 100%;
+	height: 250px;
+}
 /* --- slider revolution container --- */
 .revolution-slider-container
 {

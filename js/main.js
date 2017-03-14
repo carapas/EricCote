@@ -187,7 +187,7 @@ jQuery(document).ready(function($){
 		stopAtSlide:-1,
 		disableProgressBar: "on"
 	});
-	
+
 	//parallax
 	if(!navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/))
 		$(".parallax").parallax({
@@ -852,9 +852,9 @@ jQuery(document).ready(function($){
 	if($("#map").length)
 	{
 		//google map
-		var coordinate = new google.maps.LatLng(51.112265,17.033787);
+		var coordinate = new google.maps.LatLng(48.194228,-70.248547);
 		var mapOptions = {
-			zoom: 16,
+			zoom: 15,
 			center: coordinate,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			streetViewControl: false,
@@ -864,11 +864,13 @@ jQuery(document).ready(function($){
 			styles: [ { "featureType": "water", "elementType": "geometry", "stylers": [ { "color": "#8ccaf1" } ] },{ "featureType": "poi", "stylers": [ { "visibility": "off" } ] },{ "featureType": "transit", "stylers": [ { "visibility": "off" } ] },{ "featureType": "water", "elementType": "labels", "stylers": [ { "color": "#ffffff" }, { "visibility": "simplified" } ] } ]
 		};
 		
-		map = new google.maps.Map(document.getElementById("map"),mapOptions);
-		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(51.112265,17.033787),
-			map: map,
-			icon: new google.maps.MarkerImage("images/map_pointer.png", new google.maps.Size(38, 48), null, new google.maps.Point(18, 48))
+		$('*[id*=map]:visible').each(function(idx, element) {
+			map = new google.maps.Map(element,mapOptions);
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(48.194228,-70.248547),
+				map: map,
+				icon: new google.maps.MarkerImage("images/map_pointer.png", new google.maps.Size(38, 48), null, new google.maps.Point(18, 48))
+			});
 		});
 	}
 	
