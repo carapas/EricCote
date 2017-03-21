@@ -1039,98 +1039,11 @@ jQuery(document).ready(function($){
 			type: "post",
 			dataType: "json",
 			success: function(json){
-				self.find("[name='submit'], [name='name'], [name='email'], [name='message']").qtip('destroy');
-				if(typeof(json.isOk)!="undefined" && json.isOk)
-				{
-					if(typeof(json.submit_message)!="undefined" && json.submit_message!="")
-					{
-						self.find("[name='submit']").qtip(
-						{
-							style: {
-								classes: 'ui-tooltip-success'
-							},
-							content: { 
-								text: json.submit_message 
-							},
-							position: { 
-								my: "right center",
-								at: "left center" 
-							}
-						}).qtip('show');
-						self[0].reset();
-						self.find(".cost-slider-input").trigger("change");
-						self.find(".cost-dropdown").selectmenu("refresh");
-						self.find("input[type='text'], textarea").trigger("focus").trigger("blur");
-					}
-				}
-				else
-				{
-					if(typeof(json.submit_message)!="undefined" && json.submit_message!="")
-					{
-						self.find("[name='submit']").qtip(
-						{
-							style: {
-								classes: 'ui-tooltip-error'
-							},
-							content: { 
-								text: json.submit_message 
-							},
-							position: { 
-								my: "right center",
-								at: "left center" 
-							}
-						}).qtip('show');
-					}
-					if(typeof(json.error_name)!="undefined" && json.error_name!="")
-					{
-						self.find("[name='name']").qtip(
-						{
-							style: {
-								classes: 'ui-tooltip-error'
-							},
-							content: { 
-								text: json.error_name 
-							},
-							position: { 
-								my: "bottom center",
-								at: "top center" 
-							}
-						}).qtip('show');
-					}
-					if(typeof(json.error_email)!="undefined" && json.error_email!="")
-					{
-						self.find("[name='email']").qtip(
-						{
-							style: {
-								classes: 'ui-tooltip-error'
-							},
-							content: { 
-								text: json.error_email 
-							},
-							position: { 
-								my: "bottom center",
-								at: "top center" 
-							}
-						}).qtip('show');
-					}
-					if(typeof(json.error_message)!="undefined" && json.error_message!="")
-					{
-						self.find("[name='message']").qtip(
-						{
-							style: {
-								classes: 'ui-tooltip-error'
-							},
-							content: { 
-								text: json.error_message 
-							},
-							position: { 
-								my: "bottom center",
-								at: "top center" 
-							}
-						}).qtip('show');
-					}
-				}
-				self.find(".block").unblock();
+				document.location = "merci";
+			},
+			error: function(json){
+				$("#contact-text").text("SVP veuillez entrer un email valide.");
+				$("#contact-text").css("color", "red");
 			}
 		});
 	});

@@ -234,12 +234,13 @@
 					<div class="column column-2-3">
 						<div class="contact-map" id="map"></div>
 						<h3 class="box-header page-margin-top">ENVOYEZ NOUS UN COURRIEL</h3>
-						<form class="contact-form page-margin-top" id="contact-form" method="post" action="contact_form/contact_form.php">
+						<form class="contact-form page-margin-top" id="contact-form" method="post" action="https://formspree.io/dlalancette@beenox.com">
 							<div class="row">
 								<fieldset class="column column-1-2">
 									<input class="text-input" name="name" type="text" value="Votre Nom *" placeholder="Votre Nom *">
-									<input class="text-input" name="email" type="text" value="Votre Email *" placeholder="Votre Email *">
-									<input class="text-input" name="phone" type="text" value="Votre téléphone" placeholder="Votre téléphone">
+									<input class="text-input" name="_replyto" type="text" value="Votre Email *" placeholder="Votre Email *">
+									<input class="text-input" name="_subject" type="text" value="Votre téléphone" placeholder="Votre téléphone">
+									<input type="text" name="_gotcha" style="display:none" />
 								</fieldset>
 								<fieldset class="column column-1-2">
 									<textarea name="message" placeholder="Message *">Message *</textarea>
@@ -247,7 +248,7 @@
 							</div>
 							<div class="row margin-top-30">
 								<div class="column column-1-2">
-									<p class="description t1">Nous vous contacterons sous peu.</p>
+									<p id="contact-text" class="description t1">Nous vous contacterons sous peu.</p>
 								</div>
 								<div class="column column-1-2 align-right">
 									<input type="hidden" name="action" value="contact_form" />
