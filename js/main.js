@@ -1039,7 +1039,7 @@ jQuery(document).ready(function($){
 			type: "post",
 			dataType: "json",
 			success: function(json){
-				document.location = "merci";
+				document.location = "merci.html";
 			},
 			error: function(json){
 				$("#contact-text").text("SVP veuillez entrer un email valide.");
